@@ -1,0 +1,14 @@
+{
+  "name": "advent-of-code",
+  "description": "Advent of Code Solutions",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mreed19/advent-of-code.git"
+  },
+  "author": "Michael Reed <michael.reed315@gmail.com>",
+  "devDependencies": {
+    "eslint": "^8.3.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.25.3"
+  }
+}
