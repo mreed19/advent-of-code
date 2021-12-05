@@ -63,20 +63,6 @@ func printVents(vents []*data.Vent) {
 	fmt.Println(string(jsonBytes))
 }
 
-func min(a, b int) int {
-	if a < b {
-		return a
-	}
-	return b
-}
-
-func max(a, b int) int {
-	if a > b {
-		return a
-	}
-	return b
-}
-
 func getStep(start, end int) int {
 	if start == end {
 		return 0
