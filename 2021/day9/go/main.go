@@ -78,15 +78,22 @@ func part2(filename string) int {
 		}(lowPoints[index])
 	}
 
-	var sizes []int
+	var maxSizes []int
 	for size := range sizeChannel {
-		sizes = append(sizes, size)
+		if len(maxSizes) < 3 {
+			maxSizes = append(maxSizes, size)
+			continue
+		}
+		maxSizes = append(maxSizes, size)
+		sort.Slice(maxSizes, func(i, j int) bool {
+			return maxSizes[j] < maxSizes[i]
+		})
+		maxSizes = maxSizes[:len(maxSizes)-1]
 	}
-	sort.Ints(sizes)
 
 	result := 1
-	for i := len(sizes) - 3; i < len(sizes); i++ {
-		result *= sizes[i]
+	for _, val := range maxSizes {
+		result *= val
 	}
 
 	return result
